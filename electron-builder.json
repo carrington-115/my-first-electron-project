@@ -1,0 +1,21 @@
+{
+  "appId": "com.marktechnologies.electron-heart",
+  "productName": "Electron Heart",
+  "directories": {
+    "buildResources": "public",
+    "output": "release"
+  },
+  "files": ["dist-react/**/*", "dist-electron/**/*"],
+  "icon": "./icon.png",
+  "win": {
+    "target": ["portable", "nsis"],
+    "icon": "./icon.png",
+    "sign": null
+  },
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage"
+  }
+}
