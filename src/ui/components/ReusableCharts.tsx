@@ -19,7 +19,7 @@ const SystemChart = ({ data }: SystemChartProps) => {
         <AreaChart data={data}>
           <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
           <XAxis dataKey="cpuUsage" stroke="#9CA3AF" />
-          <YAxis stroke="#9CA3AF" domain={[0, 100]} />
+          <YAxis stroke="#9CA3AF" domain={[0, 1]} />
           <Tooltip />
 
           <Area
@@ -37,14 +37,6 @@ const SystemChart = ({ data }: SystemChartProps) => {
             fill="#60A5FA"
             fillOpacity={0.6}
             name="RAM (%)"
-          />
-          <Area
-            type="natural"
-            dataKey="storageUsage"
-            stroke="#34D399"
-            fill="#34D399"
-            fillOpacity={0.6}
-            name="Storage (%)"
           />
         </AreaChart>
       </ResponsiveContainer>

@@ -1,19 +1,7 @@
 import "./App.css";
 import SystemChart from "./components/ReusableCharts";
+import StorageChart from "./components/StorageChart";
 import { useStatistics } from "./hooks/useStatistics";
-
-const testData: Statistics[] = [
-  { cpuUsage: 45, ramUsage: 62, storageUsage: 78 },
-  { cpuUsage: 52, ramUsage: 68, storageUsage: 75 },
-  { cpuUsage: 48, ramUsage: 71, storageUsage: 80 },
-  { cpuUsage: 65, ramUsage: 75, storageUsage: 82 },
-  { cpuUsage: 58, ramUsage: 70, storageUsage: 79 },
-  { cpuUsage: 72, ramUsage: 81, storageUsage: 85 },
-  { cpuUsage: 61, ramUsage: 74, storageUsage: 77 },
-  { cpuUsage: 55, ramUsage: 69, storageUsage: 83 },
-  { cpuUsage: 68, ramUsage: 78, storageUsage: 80 },
-  { cpuUsage: 63, ramUsage: 76, storageUsage: 82 },
-];
 
 function App() {
   const statistics = useStatistics(10);
@@ -53,7 +41,16 @@ function App() {
             <h3>Storage</h3>
           </div>
         </div>
-        <SystemChart data={testData} />
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <SystemChart data={statistics} />
+          <StorageChart data={statistics} />
+        </div>
       </div>
     </>
   );
